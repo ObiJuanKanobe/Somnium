@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- sandbox client_id and secret: test_id and test_secret
+plaid_env: plaid.enviornments.tartan  
+access_token: test_[type] : (test_amex, test_wells, etc.)
+in sandbox set data-key (or key in custom integration) to test_key 
+Credentials: 
+    username: plaid-test (or plaid_selections
+    Password: plaid_good
+    pin: 1234
+    -->
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="shq.css">
+<!--style type="text/css">
+	#plaid-link-button {
+		border: 20px solid blue;
+	}
+</style -->
+<head><title>s|O|m|N|i|U|m H|q  plaid</title></head>
+<body>
+
+<div class="top-container">
+	<h1 class="title">Somnium HQ</h1>
+	<h2 class="subtitle">Continuous Micro-Donation Application</h2>
+
+	<p class="desc">
+		Micro-contributions every time you spend. <br />
+	</p>
+ </div>
+
+ <div class="log-container">
+	<h2>Logon on to your account</h2>
+	
+</div>
+	<form id="fone" method="POST" action="/authenticate"></form>
+
+	<script 
+		type="text/javascript"
+		src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"
+		data-client-name="Client Name"
+		data-form-id="fone"
+		data-key="dad6a878194f41645cf98f0ee32efe"
+		data-product="connect"
+		data-env="tartan">			
+		</script>
+</body>
+</html>

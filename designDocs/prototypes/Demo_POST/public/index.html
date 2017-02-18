@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- sandbox client_id and secret: test_id and test_secret
+plaid_env: plaid.enviornments.tartan  
+access_token: test_[type] : (test_amex, test_wells, etc.)
+in sandbox set data-key (or key in custom integration) to test_key 
+Credentials: 
+    username: plaid_test (or plaid_selections
+    Password: plaid_good
+    pin: 1234
+    -->
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--style type="text/css">
+	#plaid-link-button {
+		border: 20px solid blue;
+	}
+</style -->
+<head><title>s|O|m|N|i|U|m H|q  plaid</title></head>
+<body>
+
+<div class="bg">
+	<big>Somnium</big>
+</div>
+
+
+
+<div class="top-container">
+	<h1 class="logo">Somnium HQ</h1>
+	
+	<h3 class="subtitle">Donation Solution</h3>
+
+	<p class="desc">
+		Donate every time you spend. <br />
+	</p>
+	<button id='linkButton'>Select an institution</button>
+ </div>
+
+
+	
+  <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+<script>
+	 var sandboxHandler = Plaid.create({
+      clientName: 'Somnium',
+      env: 'tartan',
+      product: 'connect',
+      key: 'test_key',
+      onSuccess: function(token, metadata) {
+        console.log('account_id is', metadata.account.id);
+        window.location = '/accounts.html?public_token=' + token;
+      },
+      onLoad: function() {
+        console.log('Plaid Link loaded');
+      },
+      onExit: function(error, metadata) {
+        // if the user encountered a Plaid error, this will not be null
+        if (error != null) {
+          console.log('error code: '    + error.code);
+          console.log('error message: ' + error.message);
+        }
+
+        // log information about the selected institution – note: may be null
+        console.log('institution name: ' + metadata.institution.name);
+        console.log('institution type: ' + metadata.institution.type);
+
+        console.log('link_request_id: '      + metadata.link_request_id);
+        console.log('plaid_api_request_id: ' + metadata.plaid_api_request_id);
+        console.log('status: '               + metadata.status);
+      }
+    });
+
+	 document.getElementById('linkButton').onclick = function() {
+      sandboxHandler.open();
+    };
+    </script>
+	
+</body>
+</html>

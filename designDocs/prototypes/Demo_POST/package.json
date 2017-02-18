@@ -1,0 +1,9 @@
+{
+  "name": "plaid-link-demo",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.12.4",
+    "plaid": "1.0.x"
+  },
+  "private": true
+}
