@@ -11,6 +11,9 @@ Run the command:
     npm install
 
 Start the web server with the command:  
-    node app
+    node app  
+    or  
+    nodemon app (app will restart on change of js file)
+
 
 Browse to localhost:3000   
