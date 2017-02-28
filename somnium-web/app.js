@@ -1,10 +1,15 @@
 
 var path = require('path');
 
+//Routes' JS file vars
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var registration = require('./routes/userRegistration')
+var charities = require('./routes/charities');
+var news = require('./routes/news');
+var about = require('./routes/about');
 
+//Packages
 var bodyParser = require('body-parser');
 
 var express = require('express');
@@ -39,7 +44,9 @@ app.listen(port,function(){
     console.log('Listening on port ' + port);
 });
 
+//
 //Dev and Production error handling
+//
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
