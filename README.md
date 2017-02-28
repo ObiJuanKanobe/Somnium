@@ -1,5 +1,5 @@
-# Somnium (temporary working repository)
-2/25/2017
+# Somnium 
+2/27/2017
 
 Install NodeJS  
 Clone the repository (or pull latest):  
